@@ -39,7 +39,7 @@ if selected =="Home":
         with left_column:
             st.title('CompraSmart')
             st.write("##")
-            st.subheader("Tu rastreador de supermercados en España")
+            st.subheader("Encuentra el mejor super para hacer la compra de la semana")
             st.write("##")
             st.write("Agrega tus productos a la cesta y analiza en qué supermercado te conviene más hacer la compra")
         with right_column:

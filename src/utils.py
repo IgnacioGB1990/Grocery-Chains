@@ -51,6 +51,22 @@ drogueria = {
     "Limpieza Hogar": "https://www.alcampo.es/compra-online/drogueria/limpieza-hogar/c/W2108?q=%3Arelevance&page=",
     "Ambientadores": "https://www.alcampo.es/compra-online/drogueria/ambientadores/c/W2110?q=%3Arelevance&page=",
     "Insecticidas" : "https://www.alcampo.es/compra-online/drogueria/insecticidas/c/W2111?q=%3Arelevance&page="
+}
+
+
+cuidadoPersonal = {
+    "Cuidado del cabello" : "https://www.alcampo.es/compra-online/cuidado-personal/perfumeria/cuidado-del-cabello/c/W701?q=%3Arelevance&page=",
+    "Desodorantes" : "https://www.alcampo.es/compra-online/cuidado-personal/perfumeria/desodorantes/c/W705?q=%3Arelevance&page=",
+    "Maquillaje": "https://www.alcampo.es/compra-online/cuidado-personal/perfumeria/maquillaje/c/W708?q=%3Arelevance&page=",
+    "Neceseres": "https://www.alcampo.es/compra-online/cuidado-personal/perfumeria/neceseres/c/W70011?q=%3Arelevance&page=",
+    "Cuidado corporal": "https://www.alcampo.es/compra-online/cuidado-personal/perfumeria/cuidado-corporal/c/W702?q=%3Arelevance&page=",
+    "Cuidado facial": "https://www.alcampo.es/compra-online/cuidado-personal/perfumeria/cuidado-facial/c/W706?q=%3Arelevance&page=",
+    "Depilación": "https://www.alcampo.es/compra-online/cuidado-personal/perfumeria/depilacion/c/W709?q=%3Arelevance&page=",
+    "Colonias": "https://www.alcampo.es/compra-online/cuidado-personal/perfumeria/colonias/c/W7010?q=%3Arelevance&page=",
+    "Higiene bucal": "https://www.alcampo.es/compra-online/cuidado-personal/perfumeria/higiene-bucal/c/W704?q=%3Arelevance&page=",
+    "Afeitado y cuidado masculino": "https://www.alcampo.es/compra-online/cuidado-personal/perfumeria/afeitado-y-cuidado-masculino/c/W707?q=%3Arelevance&page=",
+    "Higiene íntima": "https://www.alcampo.es/compra-online/cuidado-personal/perfumeria/higiene-intima/c/W70013?q=%3Arelevance&page=",
+    "Solares":"https://www.alcampo.es/compra-online/cuidado-personal/perfumeria/solares/c/W70012?q=%3Arelevance&page="
 
 }
 
