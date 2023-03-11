@@ -22,7 +22,7 @@ with open(path,"r") as file:
 # selected2
 
 
-# testing
+# testing 2
 
 # with st.sidebar.selectbox("Elige una sección",("Region",  "Comparador","Variación de precios")):
 
