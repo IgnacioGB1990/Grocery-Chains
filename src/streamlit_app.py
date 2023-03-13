@@ -3,6 +3,8 @@ import pandas as pd
 import plotly.express as px
 import numpy as np
 
+
+import time
 import functions as ft
 import filter as fil
 import plotlyGraphs as plG
@@ -18,7 +20,7 @@ df = pd.read_csv("src/dataCleaned/all_data.csv")
 @st.cache_resource
 def load_data() -> pd.DataFrame:
     return px.data.tips()
-#exampole
+#example
   
 with st.sidebar:
     selected = option_menu(
@@ -26,7 +28,7 @@ with st.sidebar:
         options=["","Métricas","Filtrar","Mi compra","V 2.0"],
         icons=['house', 'graph-up', "filter", 'upload',"laptop"],
         menu_icon="cast",
-        default_index=1,
+        default_index=4,
     )
 
 if selected == "":
@@ -37,14 +39,14 @@ if selected == "":
 
 if selected =="Métricas":
     df_unique = df.drop_duplicates(subset = "Producto")
-    # st.plotly_chart(plG.build_bill_to_tip_figure(df))
-    # st.plotly_chart(plG.build_day_figure(df_unique))
+    st.plotly_chart(plG.build_bill_to_tip_figure(df))
+    st.plotly_chart(plG.build_day_figure(df_unique))
 
     df_sin_mercadona = df.drop(df.loc[df['Supermercado']=="Mercadona"].index)
     df_sin_alcampo = df.drop(df.loc[df['Supermercado']=="Alcampo"].index)
 
     # st.plotly_chart(plG.time_series_graph(df_sin_mercadona))
-    st.plotly_chart(plG.test())
+    # st.plotly_chart(plG.test())
 
 if selected =="Filtrar":
       st.dataframe(fil.filter_dataframe(df))
@@ -53,7 +55,10 @@ if selected =="Mi compra":
     ft.carga_datos()
 
 if selected =="V 2.0":
-    pass
+    ft.version_2()
+
+
+ 
 
 
 

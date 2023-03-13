@@ -7,7 +7,7 @@ from PIL import Image
 import numpy as np
 import plotly.express as px
 import pydeck as pdk
- 
+import time
 
 path = "./src/assets/shopping-options.json"
 with open(path,"r") as file:
@@ -46,6 +46,38 @@ def carga_datos():
         st.markdown("<p style='text-align: center;'>Ventas totales por Estado (2013 - 2016)</p>", unsafe_allow_html=True)
             #st.markdown("<h3 style='text-align: center; color: red;'>Ventas totales por Estado (2013 - 2016)</h3>", unsafe_allow_html=True)
         st.line_chart(pivot_table)    
+
+
+def version_2():
+
+    st.header("Trabajando en la versión 2.0  👨‍💻  ")
+
+    with st.spinner(text='In progress'):
+        time.sleep(1)
+        st.success('Échale un ojo...')
+
+    with st.expander("Próximos supermercados:"):
+        st.markdown("""
+                * Carrefour \n
+                * El Corte Inglés (Supermercado) \n
+                * Dia \n
+                * Lidl \n
+                * Supercor \n
+                * Eroski \n
+                * Consum \n
+                """)
+    
+
+    with st.expander("Nuevas funcionalidades:"):
+        st.markdown("""
+                * Geolocalización \n
+                * El Corte Inglés (Supermercado) \n
+
+                """)
+    
+
+
+
 
 def input_data():
 
