@@ -14,17 +14,13 @@ with open(path,"r") as file:
     url = json.load(file)
 
 def home():    
-       with st.container():
-        # left_column, right_column =st.columns(2)
-        # with left_column:
-        
+       with st.container():        
         st.title('CompraSmart')
         st.write("----")
         st.write("##")
-        st.subheader("Toma el control de tu compra semanal")
+        st.subheader("Toma el control de tu cesta de la compra")
         st.write("##")
         st.write("Compara con los supermercados de la zona para tomar la deción correcta sobre ")
-        # with right_column:
         st_lottie(url, reverse=True, height=500, width=500, speed=1, loop=True, quality='high',)
         st.write("----")
 
@@ -52,10 +48,6 @@ def version_2():
 
     st.header("Trabajando en la versión 2.0  👨‍💻  ")
 
-    with st.spinner(text='In progress'):
-        time.sleep(1)
-        st.success('Échale un ojo...')
-
     with st.expander("Próximos supermercados:"):
         st.markdown("""
                 * Carrefour \n
@@ -67,7 +59,6 @@ def version_2():
                 * Consum \n
                 """)
     
-
     with st.expander("Nuevas funcionalidades:"):
         st.markdown("""
                 * Geolocalización \n
@@ -75,9 +66,6 @@ def version_2():
 
                 """)
     
-
-
-
 
 def input_data():
 

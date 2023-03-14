@@ -30,7 +30,7 @@ with st.sidebar:
         options=["","Métricas","Filtrar","Mi compra","V 2.0"],
         icons=['house', 'graph-up', "filter", 'upload',"laptop"],
         menu_icon="cast",
-        default_index=4,
+        default_index=1,
     )
 
 if selected == "":
