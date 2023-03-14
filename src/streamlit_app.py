@@ -17,6 +17,8 @@ st.set_page_config(page_title="CompraSmart",page_icon=":tada",layout="wide")
 df = pd.read_csv("src/dataCleaned/all_data.csv")
 
 
+#test
+
 @st.cache_resource
 def load_data() -> pd.DataFrame:
     return px.data.tips()
