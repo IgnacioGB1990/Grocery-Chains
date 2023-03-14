@@ -8,6 +8,7 @@ import numpy as np
 import plotly.express as px
 import pydeck as pdk
 import time
+import plotly.graph_objects as go
 
 path = "./src/assets/shopping-options.json"
 with open(path,"r") as file:
@@ -36,11 +37,11 @@ def carga_datos():
         dataset["Date"] = dataset["Date"].dt.strftime('%d-%m-%Y')
 
         
-        st.markdown("<h3 style='text-align: center; color: red;'>Artículos disponibles</h3>", unsafe_allow_html=True)
+        st.markdown("<h3 style='text-align: center; color: green;'>Mi lista de la compra</h3>", unsafe_allow_html=True)
         st.dataframe(dataset)
         pivot_table = pd.pivot_table(dataset, values="Price", columns="Shop", index="Date", aggfunc=np.sum).copy()
-        st.markdown("<p style='text-align: center;'>Ventas totales por Estado (2013 - 2016)</p>", unsafe_allow_html=True)
-            #st.markdown("<h3 style='text-align: center; color: red;'>Ventas totales por Estado (2013 - 2016)</h3>", unsafe_allow_html=True)
+        st.markdown("<p style='text-align: center;'>Variación precio</p>", unsafe_allow_html=True)
+    
         st.line_chart(pivot_table)    
 
 

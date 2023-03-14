@@ -14,31 +14,28 @@ from streamlit_option_menu import option_menu
 
 st.set_page_config(page_title="CompraSmart",page_icon=":tada",layout="wide")
 
-df = pd.read_csv("src/dataCleaned/all_data.csv")
+df = pd.read_csv("src/dataCleaned/all_data.csv",parse_dates=["Fecha"])
 
 
-#tes
+
+
 
 @st.cache_resource
 def load_data() -> pd.DataFrame:
     return px.data.tips()
-#example
+
   
 with st.sidebar:
     selected = option_menu(
         menu_title="",
-        options=["","Métricas","Filtrar","Mi compra","V 2.0"],
-        icons=['house', 'graph-up', "filter", 'upload',"laptop"],
+        options=["","Filtrar","Métricas","Mi compra","V 2.0"],
+        icons=['house',"filter", 'graph-up', 'upload',"laptop"],
         menu_icon="cast",
         default_index=1,
     )
 
 if selected == "":
     ft.home()
-    # fil.filter_dataframe(df)
-    # st.write(df)
-    # ft.input_data()
-
 if selected =="Métricas":
     df_unique = df.drop_duplicates(subset = "Producto")
     st.plotly_chart(plG.build_bill_to_tip_figure(df))
@@ -46,6 +43,9 @@ if selected =="Métricas":
 
     df_sin_mercadona = df.drop(df.loc[df['Supermercado']=="Mercadona"].index)
     df_sin_alcampo = df.drop(df.loc[df['Supermercado']=="Alcampo"].index)
+
+    # st.plotly_chart(plG.build_bill_to_tip_figure(df_sin_mercadona))
+    # st.plotly_chart(plG.build_bill_to_tip_figure(df_sin_alcampo))
 
     # st.plotly_chart(plG.time_series_graph(df_sin_mercadona))
     # st.plotly_chart(plG.test())

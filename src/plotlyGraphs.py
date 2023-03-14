@@ -40,8 +40,14 @@ def build_day_figure(df: pd.DataFrame) -> go.Figure:
     )
 
 def time_series_graph(df: pd.DataFrame) -> go.Figure:
-    fig = px.line(df,x=df["Fecha"],y="Precio (€)",color="Producto")
-    fig.update_layour(hovermode="x")
+    fig = go.Figure([go.Scatter(x=df['Fecha'], y=df['Precio (€)'])])
+    return fig
+
+
+
+# def time_series_graph(df: pd.DataFrame) -> go.Figure:
+#     fig = px.line(df,x=df["Fecha"],y="Precio (€)",color="Producto")
+#     fig.update_layour(hovermode="x")
 
 def test():
     stocks = pd.read_csv("https://www.sharpsightlabs.com/datasets/amzn_goog_2000-01-01_to_2020-12-05.csv")

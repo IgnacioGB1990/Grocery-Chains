@@ -10,6 +10,8 @@ import plotly.graph_objs as go
 import plotly.express as px
 import streamlit as st
 
+import plotlyGraphs as plG
+
 # https://blog.streamlit.io/auto-generate-a-dataframe-filtering-ui-in-streamlit-with-filter_dataframe/
 def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
     
@@ -59,7 +61,7 @@ def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
                 df = df[df[column].between(*user_num_input)]
             elif is_datetime64_any_dtype(df[column]):
                 user_date_input = right.date_input(
-                    f"Values for {column}",
+                    f"{column}",
                     value=(
                         df[column].min(),
                         df[column].max(),
@@ -72,18 +74,34 @@ def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
             else:
 
 
-                #  selected_products = st.multiselect("Por columna", df["Producto"])
-                #  st.write('You selected:', selected_products)
+                selected_products = st.multiselect("Producto", df["Producto"])
+                
 
-                user_text_input = right.text_input(f"Filtra por {column}",  )
+                
 
-                if user_text_input:
+                if selected_products:
+                    st.markdown("<h3 style='text-align: blue; color: green;'>Evolución de Precios:</h3>", unsafe_allow_html=True)
+                    st.write(selected_products[0])
+
+                    product_chosen = selected_products[0]
+                    new_df = pd.read_csv("src/dataCleaned/all_data.csv",parse_dates=["Fecha"])
+                    time_series = new_df[new_df["Producto"]==f"{product_chosen}"]
+                    st.plotly_chart(plG.time_series_graph(time_series))
+                    
+                    # fig = go.Figure([go.Scatter(x=time_series['Fecha'], y=time_series['Precio (€)'])])
+                    # return fig
+
+
+                # user_text_input = right.text_input(f"Filtra por {column}",  )
+
+                # if user_text_input:
+                #     pass
 
                 #     # df = df[df[column].astype(str).str.contains(user_text_input)]
                 #     # df = df[        df["Producto"].astype(str).str.contains(user_text_input)      ]
 
-                    df['Producto'] = df['Producto'].str.lower()
-                    df = df[        df["Producto"].str.contains(user_text_input.lower())      ]
+                    # df['Producto'] = df['Producto'].str.lower()
+                    # df = df[        df["Producto"].str.contains(user_text_input.lower())      ]
 
                    
 
