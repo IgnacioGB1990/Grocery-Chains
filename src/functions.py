@@ -21,7 +21,7 @@ def home():
         st.write("##")
         st.subheader("Toma el control de tu cesta de la compra")
         st.write("##")
-        st.write("Compara con los supermercados de la zona para tomar la deción correcta sobre ")
+        st.write("Compara con otros supermercados de la zona para tomar la deción correcta sobre tu cesta de la compra ")
         st_lottie(url, reverse=True, height=500, width=500, speed=1, loop=True, quality='high',)
         st.write("----")
 
@@ -57,13 +57,14 @@ def version_2():
                 * Lidl \n
                 * Supercor \n
                 * Eroski \n
-                * Consum \n
                 """)
     
-    with st.expander("Nuevas funcionalidades:"):
+    with st.expander("Nuevas funcionalidades de las que estamos muy emocionados:"):
         st.markdown("""
                 * Geolocalización \n
-                * El Corte Inglés (Supermercado) \n
+                * Importar tu cesta \n
+                * Análisis detallado de tu cesta \n
+                * Y mucho más ... \n
 
                 """)
     
