@@ -12,6 +12,9 @@ import streamlit as st
 
 import plotlyGraphs as plG
 
+
+
+
 # https://blog.streamlit.io/auto-generate-a-dataframe-filtering-ui-in-streamlit-with-filter_dataframe/
 def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
     
@@ -73,10 +76,10 @@ def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
                     df = df.loc[df[column].between(start_date, end_date)]
             else:
 
-
-                selected_products = st.multiselect("Producto", df["Producto"])
+                df_unique = df.drop_duplicates(subset = "Producto")
+                selected_products = st.multiselect("Producto", df_unique["Producto"])
                 
-
+ 
                 
 
                 if selected_products:

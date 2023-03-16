@@ -16,7 +16,13 @@ st.set_page_config(page_title="CompraSmart",page_icon=":tada",layout="wide")
 
 df = pd.read_csv("src/dataCleaned/all_data.csv",parse_dates=["Fecha"])
 
+change_text = """
+<style>
+span.st-ci.st-du.st-dt.st-f6.st-f7.st-af {max-width: 100%;}
 
+</style>
+"""
+st.markdown(change_text, unsafe_allow_html=True)
 
 
 
@@ -31,7 +37,7 @@ with st.sidebar:
         options=["","Filtrar","Métricas","Mi compra","V 2.0"],
         icons=['house',"filter", 'graph-up', 'upload',"laptop"],
         menu_icon="cast",
-        default_index=0,
+        default_index=1,
     )
 
 if selected == "":
