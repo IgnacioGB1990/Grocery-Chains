@@ -26,9 +26,9 @@ st.markdown(change_text, unsafe_allow_html=True)
 
 
 
-@st.cache_resource
-def load_data() -> pd.DataFrame:
-    return px.data.tips()
+# @st.cache_resource
+# def load_data() -> pd.DataFrame:
+#     return px.data.tips()
 
   
 with st.sidebar:
