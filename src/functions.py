@@ -74,3 +74,30 @@ def input_data():
     alimentos = st.text_input("Agrega alimentos")
 
 
+def main():
+    st.title("List App")
+    
+    # Initialize the list with some items
+    items = []
+    
+    # Display the list of items
+    st.write("Current Items:", items)
+    
+    # Allow the user to add an item to the list
+    new_item = st.text_input("Add New Item")
+
+    result = st.button("Add")
+
+    print("THis is the result",result)
+    if result:
+        
+        if new_item:
+            items.append(new_item)
+            st.write("New Item Added!")
+            st.write("Current Items:", items)
+        else:
+            st.write("Please enter an item to add.")
+        
+    result = False
+if __name__ == "__main__":
+    main()

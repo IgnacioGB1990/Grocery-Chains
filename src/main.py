@@ -58,6 +58,7 @@ if selected =="Métricas":
 
 if selected =="Filtrar":
       st.dataframe(fil.filter_dataframe(df))
+      ft.main()
 
 if selected =="Mi compra":
     ft.carga_datos()
@@ -66,7 +67,6 @@ if selected =="V 2.0":
     ft.version_2()
 
 
- 
 
 
 
