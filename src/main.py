@@ -18,7 +18,7 @@ df = pd.read_csv("src/dataCleaned/all_data.csv",parse_dates=["Fecha"])
 
 change_text = """
 <style>
-span.st-ci.st-du.st-dt.st-f6.st-f7.st-af {max-width: 100%;}
+span.st-ci.st-du.st-dt.st-f9.st-fa.st-af {max-width: 100%;}
 
 </style>
 """

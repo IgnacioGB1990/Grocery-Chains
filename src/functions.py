@@ -95,6 +95,7 @@ def main():
             items.append(new_item)
             st.write("New Item Added!")
             st.write("Current Items:", items)
+            
         else:
             st.write("Please enter an item to add.")
         
